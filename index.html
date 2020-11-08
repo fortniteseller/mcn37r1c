@@ -1,0 +1,115 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>NetricCraft Server Ip</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="icon" href="https://images.emojiterra.com/mozilla/512px/1f4bd.png" type="image/png" sizes=" 16x16 ">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        body {
+            width: 80%;
+            margin: 50px auto;
+            display: block;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        div {
+            margin: 15px auto;
+        }
+        
+        img {
+            width: 100px;
+            margin: 50px;
+        }
+        
+        .rabbit {
+            width: 100px;
+            margin: 50px;
+            background-image: url('https://drive.google.com/uc?id=1qSXL4HncLPCGDDlWF9rO5S6BRhwI58kC');
+            background-size: 75px;
+            background-repeat: no-repeat;
+            background-position-x: 12px;
+        }
+        
+        .bottom-container {
+            text-align: center;
+            padding: 0 auto;
+            margin: auto;
+            font-family: 'Poppins', sans-serif;
+            color: black;
+        }
+        
+        a {
+            color: black;
+            font-family: 'Poppins', sans-serif;
+            margin: 10px 20px;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: grey;
+        }
+    </style>
+</head>
+
+<body align="center">
+    <div class="message">
+        <span>Smack on a Rabbit to get a point.</span>
+        <div class="start">
+            <button class="w3-button w3-black" id="startbutton"> START 🐇</button>
+        </div>
+    </div>
+    <div class="game">
+        <img src="https://drive.google.com/uc?id=1kKRaMkdf2iFsytUAAENtBa1W0QOxX0WK">
+        <img src="https://drive.google.com/uc?id=1kKRaMkdf2iFsytUAAENtBa1W0QOxX0WK">
+        <img src="https://drive.google.com/uc?id=1kKRaMkdf2iFsytUAAENtBa1W0QOxX0WK">
+        <br>
+        <img src="https://drive.google.com/uc?id=1kKRaMkdf2iFsytUAAENtBa1W0QOxX0WK">
+        <img src="https://drive.google.com/uc?id=1kKRaMkdf2iFsytUAAENtBa1W0QOxX0WK">
+        <img src="https://drive.google.com/uc?id=1kKRaMkdf2iFsytUAAENtBa1W0QOxX0WK">
+    </div>
+    <div class="bottom-container">
+        <a class="footer-link" href="https://discord.netriccraft.com">Discord</a>
+        <a class="footer-link" href="https://netriccraft.com">Store</a>
+        <a class="footer-link" href="https://netricraft.com">Web</a>
+        <a class="footer-link" href="#">GitHub</a>
+        <p class="copyright">© 2020 Netric Craft.</p>
+    </div>
+    <script>
+        document.onreadystatechange = function() {
+            var state = document.readyState;
+            if (state == "complete") {
+                console.log("%cSSSALTY#7777", "color:#0f1923;font-size:30px;font-weight:800;");
+            }
+        };
+        let images = document.querySelectorAll("img");
+        let n = 0;
+        let previousRan = 0;
+        let check = 0;
+        document.querySelector("button").addEventListener("click", function() {
+            let imagesAmount = images.length;
+            setInterval(function() {
+                let ran = Math.floor(Math.random() * imagesAmount);
+                images[previousRan].classList.remove('rabbit');
+                previousRan = ran;
+                images[ran].classList.add('rabbit');
+                images[ran].addEventListener('click', score);
+                setTimeout(function() {
+                    images[ran].removeEventListener('click', score);
+                    check = 0;
+                }, 598)
+            }, 600)
+        });
+        let score = function(event) {
+            if (check == 0) {
+                n = n + 1;
+                check = check + 1;
+                document.querySelector("span").innerText = "Score: " + n;
+            }
+        };
+    </script>
+</body>
+
+</html>
